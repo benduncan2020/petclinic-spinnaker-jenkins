@@ -41,7 +41,7 @@ pipeline {
                  echo '=== Pushing Petclinic to ECR Registry ==='
                 script{
                      docker.withRegistry('https://658931295811.dkr.ecr.eu-west-1.amazonaws.com/my-ecr-registry', 'ecr:eu-west-1:eks_user') {
-                          sh "docker push 658931295811.dkr.ecr.eu-west-1.amazonaws.com/my-ecr-registry/petclinic-spinnaker-jenkins:latest"
+                          sh "docker push duncantom/petclinic-spinnaker-jenkins:latest"
                      }
                 }
             }
