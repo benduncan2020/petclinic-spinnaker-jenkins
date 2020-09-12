@@ -40,7 +40,7 @@ pipeline {
             steps {
                  echo '=== Pushing Petclinic to ECR Registry ==='
                 script{
-                     docker.withRegistry('658931295811.dkr.ecr.eu-west-1.amazonaws.com/my-ecr-registry', 'ecr:eu-west-1:eks_user') {
+                     docker.withRegistry('https://658931295811.dkr.ecr.eu-west-1.amazonaws.com/my-ecr-registry', 'ecr:eu-west-1:eks_user') {
                           sh "docker push 658931295811.dkr.ecr.eu-west-1.amazonaws.com/my-ecr-registry/petclinic-spinnaker-jenkins:latest"
                      }
                 }
