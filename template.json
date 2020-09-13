@@ -1,0 +1,35 @@
+{
+    "family": "jenkins-test",
+    "placementConstraints": [],
+    "volumes": [],
+    "requiresCompatibilities": [
+        "EC2"
+    ],
+    "containerDefinitions": [
+        {
+            "memoryReservation": 500,
+            "name": "jenkins-test",
+            "mountPoints": [],
+            "image": "658931295811.dkr.ecr.eu-west-1.amazonaws.com/petclinic:latest"
+            "essential": true,
+            "portMappings": [
+                {
+                    "protocol": "tcp",
+                    "containerPort": 8080,
+                    "hostPort": 8080
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-region": "eu-west-1",
+                    "awslogs-stream-prefix": "test",
+                    "awslogs-group": "/ecs/jenkins-test"
+                }
+            },
+            "memory": 1024,
+            "cpu": 0,
+            "volumesFrom": []
+        }
+    ]
+}
